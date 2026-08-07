@@ -1,0 +1,1836 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Sally Asfour — Aspiring Full Stack Developer combining technology, data, and over 10 years of administrative and operations experience."
+    >
+
+    <title>Sally Asfour | Full Stack Developer</title>
+
+    <style>
+        /* =========================================================
+           SALLY ASFOUR — DEVELOPER PORTFOLIO
+           Refined Version
+        ========================================================= */
+
+        :root {
+            --bg-dark: #08080b;
+            --bg-soft: #0d0d12;
+            --bg-card: #121219;
+            --bg-card-hover: #171720;
+
+            --purple: #a855f7;
+            --purple-light: #c084fc;
+            --green: #22c55e;
+            --green-light: #4ade80;
+
+            --white: #f8fafc;
+            --text: #e4e4e7;
+            --muted: #a1a1aa;
+            --muted-dark: #71717a;
+
+            --border: rgba(255, 255, 255, 0.08);
+            --border-purple: rgba(168, 85, 247, 0.35);
+            --border-green: rgba(34, 197, 94, 0.3);
+
+            --max-width: 1180px;
+            --radius: 18px;
+
+            --font:
+                Inter,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text);
+            font-family: var(--font);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ::selection {
+            background: var(--purple);
+            color: white;
+        }
+
+        /* =========================================================
+           BACKGROUND EFFECTS
+        ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: -200px;
+            left: -200px;
+            background: var(--purple);
+            opacity: 0.07;
+            filter: blur(150px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            right: -200px;
+            bottom: -200px;
+            background: var(--green);
+            opacity: 0.05;
+            filter: blur(150px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* =========================================================
+           UTILITY
+        ========================================================= */
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .purple {
+            color: var(--purple-light);
+        }
+
+        .green {
+            color: var(--green-light);
+        }
+
+        .section-label {
+            color: var(--green-light);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+
+        .section-title {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section-intro {
+            max-width: 650px;
+            color: var(--muted);
+            margin-bottom: 3rem;
+        }
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 8, 11, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            width: min(90%, var(--max-width));
+            margin: auto;
+
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .logo span {
+            color: var(--purple-light);
+        }
+
+        .logo small {
+            color: var(--green);
+            font-size: 0.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-light);
+        }
+
+        .nav-cta {
+            border: 1px solid var(--border-purple);
+            padding: 0.55rem 1rem;
+            border-radius: 8px;
+            color: var(--purple-light) !important;
+        }
+
+        .nav-cta:hover {
+            background: rgba(168, 85, 247, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--white);
+            border-radius: 8px;
+            padding: 0.5rem 0.7rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 130px 0 80px;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            border: 1px solid var(--border-green);
+            background: rgba(34, 197, 94, 0.05);
+
+            padding: 0.45rem 0.85rem;
+            border-radius: 50px;
+
+            color: var(--green-light);
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 10px var(--green);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.7rem);
+            line-height: 0.98;
+            letter-spacing: -0.055em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            color: var(--purple-light);
+            font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+            font-weight: 600;
+            margin-bottom: 1.3rem;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description strong {
+            color: var(--text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            padding: 0.8rem 1.25rem;
+            border-radius: 9px;
+
+            font-weight: 700;
+            font-size: 0.9rem;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--purple);
+            color: white;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--purple-light);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.35);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-green);
+            color: var(--green-light);
+            background: rgba(34, 197, 94, 0.03);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .quick-links a {
+            transition: color 0.2s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--green-light);
+        }
+
+        /* =========================================================
+           PROFILE IMAGE
+        ========================================================= */
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            padding: 9px;
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    transparent 45%,
+                    var(--green)
+                );
+
+            box-shadow:
+                0 0 70px rgba(168, 85, 247, 0.15),
+                0 0 70px rgba(34, 197, 94, 0.08);
+        }
+
+        .profile-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: -25px;
+            border: 1px solid rgba(168, 85, 247, 0.12);
+            border-radius: 35px;
+            z-index: -1;
+        }
+
+        .hero-image {
+            display: block;
+            width: 360px;
+            height: 440px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 18px;
+            background: var(--bg-card);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -25px;
+            left: -40px;
+
+            background: rgba(18, 18, 25, 0.94);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            padding: 1rem 1.2rem;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .floating-card strong {
+            display: block;
+            color: var(--green-light);
+            font-size: 0.8rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .floating-card span {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            padding: 1.5rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+
+        .stat span {
+            color: var(--muted-dark);
+            font-size: 0.75rem;
+        }
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        .career-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                var(--purple),
+                var(--green)
+            );
+        }
+
+        .career-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .career-card p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects {
+            background: rgba(255, 255, 255, 0.012);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.3rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            padding: 1.7rem;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            background: var(--bg-card-hover);
+            border-color: var(--border-purple);
+            box-shadow: 0 15px 40px rgba(168, 85, 247, 0.08);
+        }
+
+        .project-number {
+            color: var(--purple-light);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-card h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin: 1.3rem 0;
+        }
+
+        .tech-stack span {
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            background: rgba(168, 85, 247, 0.06);
+            color: var(--muted);
+            padding: 0.25rem 0.55rem;
+            border-radius: 5px;
+            font-size: 0.7rem;
+        }
+
+        .project-link {
+            color: var(--green-light);
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: white;
+        }
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.3rem;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem;
+        }
+
+        .skill-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .skill-box.frontend h3 {
+            color: var(--green-light);
+        }
+
+        .skill-box.backend h3 {
+            color: var(--purple-light);
+        }
+
+        .skill-box.tools h3 {
+            color: var(--text);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .skill {
+            padding: 0.45rem 0.7rem;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience {
+            background: rgba(255, 255, 255, 0.012);
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+
+            border-left: 1px solid rgba(168, 85, 247, 0.35);
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -2.43rem;
+            top: 5px;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+            background: var(--green);
+
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+        }
+
+        .timeline-date {
+            color: var(--green-light);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .timeline-company {
+            color: var(--purple-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-desc {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* =========================================================
+           CAREER TRANSITION
+        ========================================================= */
+
+        .transition-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(168, 85, 247, 0.08),
+                    rgba(34, 197, 94, 0.04)
+                );
+
+            border: 1px solid var(--border-purple);
+            border-radius: 24px;
+
+            padding: 3rem;
+
+            text-align: center;
+        }
+
+        .transition-card h2 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            margin-bottom: 1rem;
+        }
+
+        .transition-card p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--muted);
+        }
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border-green);
+            border-radius: 24px;
+
+            padding: 3.5rem 2rem;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .social-link {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.025);
+
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+
+            color: var(--text);
+            font-size: 0.85rem;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--green);
+            color: var(--green-light);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+
+            text-align: center;
+            color: var(--muted-dark);
+            font-size: 0.75rem;
+        }
+
+        footer .footer-code {
+            color: var(--purple-light);
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .quick-links {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-image {
+                width: 290px;
+                height: 350px;
+            }
+
+            .floating-card {
+                left: 10px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 1.3rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .nav-inner {
+                min-height: 64px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+
+                background: rgba(8, 8, 11, 0.97);
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 5%;
+            }
+
+            .nav-cta {
+                border: none;
+                padding: 1rem 5%;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                padding-top: 105px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                width: 240px;
+                height: 300px;
+            }
+
+            .profile-wrapper {
+                padding: 7px;
+            }
+
+            .floating-card {
+                bottom: -20px;
+                left: 0;
+                padding: 0.8rem;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transition-card {
+                padding: 2rem 1.3rem;
+            }
+
+            .contact-box {
+                padding: 2.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .quick-links {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <nav>
+        <div class="nav-inner">
+
+            <a href="#home" class="logo">
+                SALLY<span>.dev</span>
+                <small> // portfolio</small>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Journey</a></li>
+                <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <main id="home">
+
+        <div class="container">
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        Open to Junior Developer Opportunities
+                    </div>
+
+                    <h1>
+                        Hi, I'm
+                        <span class="purple">Sally.</span>
+                    </h1>
+
+                    <div class="hero-subtitle">
+                        Aspiring Full Stack Developer
+                        <span class="green">×</span>
+                        Operations Thinker
+                    </div>
+
+                    <p class="hero-description">
+                        I am transitioning from
+                        <strong>10+ years of administrative and
+                        operations experience</strong>
+                        into technology, combining structured problem-solving,
+                        data, and web development to build practical digital
+                        solutions.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-primary">
+                            View My Work →
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Let's Connect
+                        </a>
+
+                    </div>
+
+                    <div class="quick-links">
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/sally-riady-asfour/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                        <a href="mailto:sallyriady777@gmail.com">
+                            Email ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="profile-wrapper">
+
+                        <!-- YOUR ORIGINAL PHOTO -->
+                        <img
+                            src="static/sally.jpg"
+                            alt="Portrait of Sally Asfour"
+                            class="hero-image"
+                        >
+
+                    </div>
+
+                    <div class="floating-card">
+                        <strong>Currently Building</strong>
+                        <span>Full Stack Development + Data</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =====================================================
+             STATS
+        ====================================================== -->
+
+        <div class="stats">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <div class="stat">
+                        <strong>10+</strong>
+                        <span>Years Professional Experience</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>5+</strong>
+                        <span>Development Projects</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>HTML → Python</strong>
+                        <span>Current Learning Path</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>Full Stack</strong>
+                        <span>Career Goal</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <div class="section-label">01 / About Me</div>
+
+                        <h2 class="section-title">
+                            From operations
+                            <span class="purple">to code.</span>
+                        </h2>
+
+                        <p>
+                            My professional background is rooted in
+                            administration, coordination, reporting,
+                            documentation, and operational management.
+                        </p>
+
+                        <p>
+                            Over time, I became increasingly interested in
+                            how technology can transform repetitive processes,
+                            organize information, improve workflows, and turn
+                            data into useful insights.
+                        </p>
+
+                        <p>
+                            That interest became a career transition.
+                            I am now developing practical skills in
+                            <strong>HTML, CSS, JavaScript, Python, SQL,
+                            Git, GitHub, and data analysis.</strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="career-card">
+
+                        <h3>
+                            Why Full Stack Development?
+                        </h3>
+
+                        <p>
+                            I enjoy understanding the complete journey of a
+                            problem — from the user interface and interaction
+                            to the underlying logic, data, and systems.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            My operations background gives me a different
+                            perspective: I naturally think about structure,
+                            processes, users, documentation, and how different
+                            pieces of a system work together.
+                        </p>
+
+                        <br>
+
+                        <p class="green">
+                            My goal is to combine that experience with
+                            software development and grow into a capable
+                            Full Stack Developer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section id="projects" class="projects">
+
+            <div class="container">
+
+                <div class="section-label">02 / Selected Work</div>
+
+                <h2 class="section-title">
+                    Projects & <span class="purple">Repositories</span>
+                </h2>
+
+                <p class="section-intro">
+                    A selection of development and data-related work from
+                    my learning journey, AXSOS training, and practical
+                    experimentation.
+                </p>
+
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 01</div>
+
+                        <h3>Mehani Platform</h3>
+
+                        <p>
+                            A web platform concept designed to connect
+                            professional service providers with clients,
+                            with a focus on structured information,
+                            usability, and collaborative development.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>Web Development</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Collaboration</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Explore on GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 02</div>
+
+                        <h3>AXSOS Advanced Challenges</h3>
+
+                        <p>
+                            A collection of frontend and programming challenges
+                            completed during my development training, including
+                            layout systems, Flexbox, responsive grids,
+                            GitHub Blocks, and functional UI components.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Flexbox</span>
+                            <span>GitHub</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/stars/sallyApal/lists/axsos-advanced-challenges"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            View AXSOS Work →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 03</div>
+
+                        <h3>Data Analytics & Insights</h3>
+
+                        <p>
+                            Data analysis work focused on cleaning,
+                            transforming, exploring, and interpreting datasets
+                            using Python, Pandas, SQL, and analytical thinking.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>SQL</span>
+                            <span>Data Analysis</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/stars/sallyApal/lists/data-story"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            View Data Work →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 04</div>
+
+                        <h3>Frontend Practice</h3>
+
+                        <p>
+                            Small practical exercises focused on building
+                            confidence with semantic HTML, CSS styling,
+                            responsive layouts, forms, and user interface
+                            structure.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Responsive Design</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Browse GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 05 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 05</div>
+
+                        <h3>JavaScript Practice</h3>
+
+                        <p>
+                            Interactive exercises developed while learning
+                            JavaScript fundamentals, including functions,
+                            events, DOM interaction, and basic application
+                            logic.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>DOM</span>
+                            <span>Events</span>
+                            <span>Logic</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Browse GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 06 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">PROJECT / 06</div>
+
+                        <h3>Portfolio Website</h3>
+
+                        <p>
+                            This portfolio itself is a practical project:
+                            designed and developed to communicate my technical
+                            journey, professional background, projects, and
+                            career transition.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive UI</span>
+                            <span>GitHub</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            View GitHub →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-label">03 / Technical Skills</div>
+
+                <h2 class="section-title">
+                    My <span class="green">Tech Blueprint</span>
+                </h2>
+
+                <p class="section-intro">
+                    Technologies and tools I am currently learning and
+                    applying through hands-on projects.
+                </p>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-box frontend">
+
+                        <h3>Frontend Development</h3>
+
+                        <div class="skills-list">
+                            <span class="skill">HTML5</span>
+                            <span class="skill">CSS3</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">Responsive Design</span>
+                            <span class="skill">Flexbox</span>
+                            <span class="skill">CSS Grid</span>
+                            <span class="skill">DOM</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-box backend">
+
+                        <h3>Backend & Data</h3>
+
+                        <div class="skills-list">
+                            <span class="skill">Python</span>
+                            <span class="skill">SQL</span>
+                            <span class="skill">Pandas</span>
+                            <span class="skill">Data Analysis</span>
+                            <span class="skill">Data Cleaning</span>
+                            <span class="skill">Problem Solving</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-box tools">
+
+                        <h3>Tools & Workflow</h3>
+
+                        <div class="skills-list">
+                            <span class="skill">Git</span>
+                            <span class="skill">GitHub</span>
+                            <span class="skill">VS Code</span>
+                            <span class="skill">Version Control</span>
+                            <span class="skill">Documentation</span>
+                            <span class="skill">Team Collaboration</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section id="experience" class="experience">
+
+            <div class="container">
+
+                <div class="section-label">04 / Professional Journey</div>
+
+                <h2 class="section-title">
+                    Experience beyond <span class="purple">code.</span>
+                </h2>
+
+                <p class="section-intro">
+                    My previous professional experience is not separate from
+                    my technology journey. It is part of what I bring into
+                    development.
+                </p>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2024 — PRESENT
+                        </div>
+
+                        <div class="timeline-title">
+                            Administration Assistant
+                        </div>
+
+                        <div class="timeline-company">
+                            Association of Palestinian Local Authorities
+                            (APLA)
+                        </div>
+
+                        <div class="timeline-desc">
+                            Supporting administrative operations,
+                            coordination, documentation, reporting, and
+                            structured information management.
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2016 — 2019
+                        </div>
+
+                        <div class="timeline-title">
+                            Executive Secretary
+                        </div>
+
+                        <div class="timeline-company">
+                            National Center for Disaster Risk Management
+                            (PalDRM)
+                        </div>
+
+                        <div class="timeline-desc">
+                            Managed documentation, reporting, coordination,
+                            operational information, and structured workflows
+                            supporting organizational activities.
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            PREVIOUS EXPERIENCE
+                        </div>
+
+                        <div class="timeline-title">
+                            Administration, Coordination & Operations
+                        </div>
+
+                        <div class="timeline-company">
+                            Welfare Association · AlHajal · World Vision · PARC
+                        </div>
+
+                        <div class="timeline-desc">
+                            Developed extensive experience in administration,
+                            coordination, communication, reporting,
+                            documentation, and organizational operations.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CAREER TRANSITION
+        ====================================================== -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="transition-card">
+
+                    <div class="section-label">
+                        05 / Career Transition
+                    </div>
+
+                    <h2>
+                        I'm not starting over.
+                        <span class="green">I'm building forward.</span>
+                    </h2>
+
+                    <p>
+                        My move into software development is an evolution of
+                        the skills I have already developed: organization,
+                        analytical thinking, communication, problem solving,
+                        process improvement, and understanding how people
+                        interact with systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div class="section-label">
+                        06 / Contact
+                    </div>
+
+                    <h2>
+                        Let's build something
+                        <span class="purple">useful.</span>
+                    </h2>
+
+                    <p>
+                        I am currently developing my skills toward a Junior
+                        Full Stack Developer role and am open to opportunities,
+                        collaborations, and conversations about technology
+                        and data.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a
+                            href="https://github.com/sallyApal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/sally-riady-asfour/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                        <a
+                            href="mailto:sallyriady777@gmail.com"
+                            class="social-link"
+                        >
+                            Email Me ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Sally Asfour.
+                Built with
+                <span class="footer-code">
+                    HTML · CSS · JavaScript
+                </span>
+                and a lot of learning.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen = navLinks.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+
+        // Close mobile navigation after selecting a link
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
